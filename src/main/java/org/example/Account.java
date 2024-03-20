@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Account {
 
     private String accNr;
-    private BigDecimal accBalance = new BigDecimal(0.0);
+    private BigDecimal accBalance;
     private Client client;
 
     public Account(String accNr, BigDecimal accBalance, Client client) {
@@ -31,7 +31,7 @@ public class Account {
     }
 
     public void setAccBalance(BigDecimal accBalance) {
-        this.accBalance.add(accBalance);
+        this.accBalance = this.accBalance.add(accBalance);
     }
 
     public Client getClient() {
@@ -65,6 +65,6 @@ public class Account {
     }
 
     public void withdrawMoney(BigDecimal bigDecimal) {
-        this.accBalance.subtract(bigDecimal);
+        this.accBalance = this.accBalance.subtract(bigDecimal);
     }
 }
